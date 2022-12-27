@@ -25,9 +25,11 @@ pipeline {
             steps {
                 git url: "https://github.com/hashicorp/learn-terraform-provision-eks-cluster",
                     branch: "main"
-                sh 'terraform -chdir=/home/ubuntu/remote_root/workspace/salercore init'  
+                sh 'terraform -chdir=/home/ubuntu/remote_root/workspace/salercore init' 
+                sh 'ls' 
                 sh 'terraform apply -auto-approve'
 				//sh 'terraform destroy -auto-approve'
+                
                   
             }
         }
